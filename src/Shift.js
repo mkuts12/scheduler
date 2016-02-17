@@ -1,10 +1,11 @@
+import _ from 'lodash';
 
-export default class Shift {
-    constructor({
-        peopleNeeded,
+export function newShift ({
+    peopleNeeded,
+    ptorim,
+}, people) {
+    return people.size > peopleNeeded ? undefined : {
         ptorim,
-    }){
-        this.people = new Array( peopleNeeded );
-        this.ptorim = ptorim;
-    }
+        people: _.sampleSize(people, peopleNeeded),
+    };
 }
