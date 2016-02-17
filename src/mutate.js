@@ -4,6 +4,6 @@ import { generateTupleIn, mutation } from './utility.js'
 
 export default function mutate ( solution, callback ){
     callback(_.map( solution, shift => {
-        shift = mutation( shift, people() );
+        return mutation( shift, people() );
     }));
 }
