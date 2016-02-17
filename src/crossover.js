@@ -2,7 +2,7 @@ import _ from 'lodash';
 import { generateTupleIn, mutation } from './utility.js';
 import { copyShift } from './shift.js';
 
-function pickParents ( solution1, solution2 ){
+function pickParentsRandomly ( solution1, solution2 ){
     return _.random() ? {
         mother: solution1,
         father: solution2,
@@ -13,7 +13,7 @@ function pickParents ( solution1, solution2 ){
 }
 
 export default function crossover (solution1, solution2, callback){
-    let { mother, father } = pickParents(solution1, solution2)
+    let { mother, father } = pickParentsRandomly(solution1, solution2)
     _.map( mother, ( shift, index ) => {
         return copyShift(shift, mutation(shift, father[index].people));
     } )
