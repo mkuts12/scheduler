@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 export function generateTupleIn ( { start, end } ) {
     let a = _.random(start, end);
     let b = _.random(start, end);
