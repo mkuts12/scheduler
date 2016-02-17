@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import { people, shifts } from './dataStore.js';
-import newShift from './shift.js';
+import { newShift } from './shift.js';
 
 defaultPeople = people();
 defaultShifts = shifts();
