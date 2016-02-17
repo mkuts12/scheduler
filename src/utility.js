@@ -12,8 +12,6 @@ export function generateTupleIn ( { start, end } ) {
 export function mutation (shift, people){
     let { start, end } = generateTupleIn(0, shift.people.length);
     let arr = _.take(shift.people, start);
-    arr = _.reduce( _.sampleSize( people, start - end ), (newShift, person) => {
-        return _.concat(newShift, person);
-    }, arr);
+    arr = _.concat( arr, _.sampleSize( people, start - end ) );
     return _.concat( arr, _.drop( shift.people, end ) );
 }
