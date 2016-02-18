@@ -23,18 +23,22 @@ export function shifts (){
         {
             peopleNeeded: 3,
             ptorim: [],
+            people: {},
         },
         {
             peopleNeeded: 5,
             ptorim: [],
+            people: {},
         },
         {
             peopleNeeded: 2,
             ptorim: [],
+            people: {},
         },
         {
-            peopleNeeded: 8,
+            peopleNeeded: 1,
             ptorim: [],
+            people: {},
         },
 
     ]);
