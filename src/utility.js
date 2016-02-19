@@ -4,8 +4,8 @@ export function generateTupleIn ( { start, end } ) {
     let a = _.random(start, end);
     let b = _.random(start, end);
     return {
-        start: _.max([ a,b ]),
-        end: _.min([ a,b ]),
+        start: _.min([ a,b ]),
+        end: _.max([ a,b ]),
     };
 }
 
@@ -13,21 +13,27 @@ export function candidates ({ from, excluding }){
     let ids = _.map(excluding, obj => {
         return obj.id;
     });
-    return _.remove(from, obj => {
+    let temp = _.filter(from, obj => {
         return _.findIndex( ids, id => {
-            return obj.id === id;
-        });
+            return obj.id === id ;
+        }) === -1 ? true : false;
     });
+    return temp;
 }
 
 export function mutation (shift, people){
     let { start, end } = generateTupleIn(0, shift.people.length);
+    debugger;
     let arr = _.take(shift.people, start);
     arr = _.concat( arr, _.drop( shift.people, end ) )
-    return _.concat( arr, _.sampleSize( candidates({
+    let candidateArr = candidates({
         from: people,
         excluding: arr,
-    }), start - end ));
+    });
+    let temp = _.sampleSize( candidateArr, end - start );
+    arr = _.concat( arr, temp );
+    console.log('arr: ' + JSON.stringify(arr));
+    return arr;
 };
 
 export function defined( a ){
