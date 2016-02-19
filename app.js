@@ -20,6 +20,6 @@ let taskInstance = new Task({
 
 console.log("start");
 taskInstance.run( stats => {
-    console.log('~drum roll~ results: ', stats);
+    console.log('~drum roll~ results: ', JSON.stringify(stats));
     debugger;
 } )
