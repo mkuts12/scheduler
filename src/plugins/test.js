@@ -1,7 +1,9 @@
-import _ from 'lodash';
+// import _ from 'lodash';
+var _ = require('lodash');
 
-export default function ( solution ) {
-    let sum = 0;
+// export default function ( solution ) {
+module.exports = function ( solution ){
+    var sum = 0;
     sum += +( solution[0].people[ "1" ] );
     sum += +( solution[0].people[ "3" ] );
     sum += +( solution[0].people[ "5" ] );
