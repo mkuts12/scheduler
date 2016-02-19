@@ -5,7 +5,7 @@ export function newShift ({
     ptorim,
     id,
 }, people) {
-    return people.size > peopleNeeded ? undefined : {
+    return people.size < peopleNeeded ? undefined : {
         ptorim,
         people: _.sampleSize(people, peopleNeeded),
     };
