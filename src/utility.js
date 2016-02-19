@@ -23,7 +23,6 @@ export function candidates ({ from, excluding }){
 
 export function mutation (shift, people){
     let { start, end } = generateTupleIn(0, shift.people.length);
-    debugger;
     let arr = _.take(shift.people, start);
     arr = _.concat( arr, _.drop( shift.people, end ) )
     let candidateArr = candidates({
@@ -32,7 +31,7 @@ export function mutation (shift, people){
     });
     let temp = _.sampleSize( candidateArr, end - start );
     arr = _.concat( arr, temp );
-    console.log('arr: ' + JSON.stringify(arr));
+    // console.log('arr: ' + JSON.stringify(arr));
     return arr;
 };
 
