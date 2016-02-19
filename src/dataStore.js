@@ -23,21 +23,25 @@ module.exports = {
     ],
     shifts: [
         {
+            id: 1,
             peopleNeeded: 3,
             ptorim: [],
             people: {},
         },
         {
+            id: 2,
             peopleNeeded: 5,
             ptorim: [],
             people: {},
         },
         {
+            id: 3,
             peopleNeeded: 2,
             ptorim: [],
             people: {},
         },
         {
+            id: 4,
             peopleNeeded: 1,
             ptorim: [],
             people: {},

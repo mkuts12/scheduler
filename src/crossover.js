@@ -14,6 +14,8 @@ function pickParentsRandomly ( solution1, solution2 ){
 
 export default function crossover (solution1, solution2, callback){
     let { mother, father } = pickParentsRandomly(solution1, solution2)
+    // console.log('mother: ' + JSON.stringify(mother));
+    debugger;
     callback(_.map( mother, ( shift, index ) => {
         return copyShift(shift, mutation(shift, father[index].people));
     }));

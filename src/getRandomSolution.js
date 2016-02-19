@@ -15,7 +15,7 @@ export default function seed (callback, {
     let shifts = defined(allShifts) ? allShifts : defaultShifts;
     // New array of shifts
     callback(_.fill( new Array(shifts.length), '' ).map( ( shift, index ) => {
-        return newShift( shifts[index], people );
+        return newShift( shifts[index], people, index );
     } ));
 }
 
