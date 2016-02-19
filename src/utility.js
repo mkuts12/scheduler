@@ -15,3 +15,7 @@ export function mutation (shift, people){
     arr = _.concat( arr, _.sampleSize( people, start - end ) );
     return _.concat( arr, _.drop( shift.people, end ) );
 }
+
+export function defined( a ){
+    return ! a === undefined;
+}

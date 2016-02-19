@@ -1,5 +1,5 @@
-export function people (){
-    return ( {
+module.exports = {
+    people: {
         1: {
             ptorim: []
         },
@@ -15,11 +15,8 @@ export function people (){
         5: {
             ptorim: []
         }
-    } );
-} 
-
-export function shifts (){
-    return ([
+    },
+    shifts: [
         {
             peopleNeeded: 3,
             ptorim: [],
@@ -41,5 +38,5 @@ export function shifts (){
             people: {},
         },
 
-    ]);
-}
+    ],
+};

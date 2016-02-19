@@ -1,5 +1,5 @@
-import { threshold } from './options.js';
+import { threshold } from '../options.js';
 
-export function stopCriterion (){
+export default function stopCriterion (){
     return this.statistics ? this.statistics.maxScore > threshold : 0;
 }

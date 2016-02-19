@@ -6,7 +6,7 @@ import stopCriteria from './src/stopCriteria.js';
 import fitness from './src/fitness.js';
 import mutate from './src/mutate.js';
 
-let taskInstance = Task({
+let taskInstance = new Task({
     getRandomSolution : getRandomSolution,
     popSize : options.popSize,
     stopCriteria : stopCriteria,
@@ -18,6 +18,7 @@ let taskInstance = Task({
     crossover : crossover,
 });
 
+console.log("start");
 taskInstance.run( stats => {
     console.log('~drum roll~ results: ', stats);
 } )
