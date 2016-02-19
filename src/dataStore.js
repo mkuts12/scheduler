@@ -1,21 +1,26 @@
 module.exports = {
-    people: {
-        1: {
+    people: [
+        {
+            id: 1,
             ptorim: []
         },
-        2: {
+        {
+            id: 2,
             ptorim: []
         },
-        3: {
+        {
+            id: 3,
             ptorim: []
         },
-        4: {
+        {
+            id: 4,
             ptorim: []
         },
-        5: {
+        {
+            id: 5,
             ptorim: []
         }
-    },
+    ],
     shifts: [
         {
             peopleNeeded: 3,
