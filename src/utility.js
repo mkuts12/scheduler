@@ -31,7 +31,6 @@ export function mutation (shift, people){
     });
     let temp = _.sampleSize( candidateArr, end - start );
     arr = _.concat( arr, temp );
-    // console.log('arr: ' + JSON.stringify(arr));
     return arr;
 };
 

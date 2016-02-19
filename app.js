@@ -21,4 +21,5 @@ let taskInstance = new Task({
 console.log("start");
 taskInstance.run( stats => {
     console.log('~drum roll~ results: ', stats);
+    debugger;
 } )
