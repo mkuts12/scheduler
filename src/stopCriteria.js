@@ -5,7 +5,7 @@ import { threshold } from '../options.js';
 // }
 
 function addStagnationIndictator(){
-    if( this.stagnation === undefined )
+    if( this.stagnation !== undefined )
         return;
     this.stagnation = 0;
     this.previousMaxScore = 0;
@@ -21,7 +21,8 @@ function updateMaxScore(){
 }
 
 function isStagnated(){
-    this.stagnation = getDiff.call(this) <= threshold ? this.stagnating + 1 : 0;
+    this.stagnation = getDiff.call(this) <= threshold ? this.stagnation + 1 : 0;
+    updateMaxScore.call(this);
     return this.stagnation >= 5;
 }
 
