@@ -1,5 +1,5 @@
 module.exports = {
-    "threshold": 11,
+    "threshold": 0,
     "popSize" : 500,
     "minimize": false,
     "mutateProbability": 0.1,
