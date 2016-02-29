@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import uuid from 'uuid';
 
 export function newShift ({
     peopleNeeded,
@@ -29,7 +30,7 @@ class Shift {
         people,
     } ){
         this.exceptions = exceptions
-        this.id = uuid();
+        this.id = uuid.v4();
         this.people = people ? people : _.sampleSize(people, peopleNeeded);
         this.startDate = startDate;
         this.endDate = endDate;
