@@ -2,23 +2,38 @@ import _ from 'lodash';
 
 export function newShift ({
     peopleNeeded,
-    ptorim,
-    id,
-}, people) {
-    return people.size < peopleNeeded ? undefined : {
-        ptorim,
-        people: _.sampleSize(people, peopleNeeded),
-        id: id,
-    };
+    exceptions,
+    type,
+    startDate,
+    endDate,
+    people,
+}) {
+    return new Shift({
+        peopleNeeded,
+        exceptions,
+        type,
+        startDate,
+        endDate,
+        people,
+    });
 }
+module.exports.copyShift = newShift;
 
-export function copyShift ({
-    ptorim,
-    id,
-}, newPeople) {
-    return {
-        ptorim,
-        id,
-        people: newPeople,
-    };
+class Shift {
+    constructor({
+        peopleNeeded,
+        exceptions,
+        type,
+        startDate,
+        endDate,
+        people,
+    } ){
+        this.exceptions = exceptions
+        this.id = uuid();
+        this.people = people ? people : _.sampleSize(people, peopleNeeded);
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.type = type;
+        this.exceptions = exceptions;
+    }
 }
