@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import uuid from 'uuid';
+import { people as defaultPeople } from './dataStore';
 
 export function newShift ({
     peopleNeeded,
@@ -29,9 +30,10 @@ class Shift {
         endDate,
         people,
     } ){
+        debugger;
         this.exceptions = exceptions
         this.id = uuid.v4();
-        this.people = people ? people : _.sampleSize(people, peopleNeeded);
+        this.people = people ? people : _.sampleSize(defaultPeople, peopleNeeded);
         this.startDate = startDate;
         this.endDate = endDate;
         this.type = type;
